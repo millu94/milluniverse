@@ -12,6 +12,7 @@ import java.util.Optional;
 
 @RestController
 public class ProductController {
+
     @Autowired
     ProductRepository productRepository;
 
@@ -29,5 +30,18 @@ public class ProductController {
     public ResponseEntity<Product> postProduct(@RequestBody Product product){
         productRepository.save(product);
         return new ResponseEntity<>(product, HttpStatus.CREATED);
+    }
+
+    @PatchMapping(value = "/products/{id}")
+    public ResponseEntity<Product> updateProduct(@RequestBody Product product){
+        productRepository.save(product);
+        return new ResponseEntity<>(product, HttpStatus.OK);
+    }
+
+    @DeleteMapping(value = "/products/{id}")
+    public ResponseEntity<Product> deleteProduct(@PathVariable Long id) {
+        Product found = productRepository.getOne(id);
+        productRepository.delete(found);
+        return new ResponseEntity<>(null, HttpStatus.OK);
     }
 }
