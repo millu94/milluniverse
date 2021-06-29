@@ -1,8 +1,11 @@
 Hello and welcome! This is my final project at CodeClan.
 
 Day 1 objectives:
-    -Get back end up and running using Java and Spring
+
+-Get back end up and running using Java and Spring
+
 Day1 outcomes:
+
 After signing off the project with an instructor yesterday afternoon, I knew that my first task would be to get
 the back-end operational. Up until this point I had a very loose skeleton prototype for the website, and the
 shop items were hardcoded in the front end. 
