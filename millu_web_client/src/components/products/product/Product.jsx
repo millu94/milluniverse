@@ -18,10 +18,10 @@ const Product = ({ product }) => {
                         {product.name}
                     </Typography>
                     <Typography variant="h5">
-                        {product.price}
+                        £ {product.price}
                     </Typography>
                 </div>
-                <Typography variant="body2" color="textSecondary">{product.desc}</Typography>
+                <Typography variant="body2" color="textSecondary">{product.description}</Typography>
             </CardContent>
             <CardActions disabledSpacing className={classes.cardActions}>
                 <IconButton aria-label="Add to Cart">

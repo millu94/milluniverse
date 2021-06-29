@@ -1,6 +1,6 @@
 package com.milluWebServer.server.controllers;
 
-import com.milluWebServer.server.products.Product;
+import com.milluWebServer.server.models.Product;
 import com.milluWebServer.server.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
