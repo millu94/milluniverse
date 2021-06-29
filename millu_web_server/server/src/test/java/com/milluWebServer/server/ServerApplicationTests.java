@@ -19,7 +19,12 @@ public class ServerApplicationTests {
 	@Test
 	public void createProduct(){
 		Product spanner = new Product("Spanner", "Handy tool", 4.50);
+		Product hammer = new Product("Hammer", "Handy tool", 4.50);
+		Product screwdriver = new Product("screwdriver", "Handy tool", 4.50);
 		productRepository.save(spanner);
+		productRepository.save(hammer);
+		productRepository.save(screwdriver);
 	}
+
 
 }
