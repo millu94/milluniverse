@@ -27,9 +27,9 @@ const Shop = () => {
         setCart(cart)
     }
 
-    const handleAddToCart = async ( productId, quantity ) => {
+    const handleAddToCart = async ( product ) => {
         
-        const item = { productId, quantity }
+        const item = { product }
         setCart([...cart, item]);
     }
 
@@ -42,7 +42,7 @@ const Shop = () => {
 
     return(
         <div>
-            <Header />
+            <Header totalItems={cart.length}/>
             <h1> Plz buy stuff </h1>
             <Products products={products} onAddToCart={handleAddToCart}/>
         </div>
