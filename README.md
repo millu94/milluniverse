@@ -41,3 +41,5 @@ amount of items in the basket, I then passed the length of the basket array as a
 would display how many items were in the basket. One thing that I have noticed is that if I click on a different 
 section of the website, I lose all the items in the basket. Ideally I would like to retain all the items in the 
 basket no matter what part of the website I am visiting.
+
+I finished off today by working on the basket/checkout feature.
