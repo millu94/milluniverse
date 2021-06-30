@@ -1,7 +1,9 @@
 import React from 'react';
-import Header from '../components/header';
+// import Header from '../components/header/Header';
+// import Products from '../components/products/Products';
+// check out the index.js file inside the components folder to see how they can be exported
 
-import Products from '../components/products/Products';
+import { Header, Products } from '../components';
 
 const Shop = () => {
     return(
