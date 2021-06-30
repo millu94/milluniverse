@@ -25,3 +25,7 @@ were displaying in the front end.
 Tomorrow I will start my day with resuming this handy tutorial (https://www.youtube.com/watch?v=377AQ0y6LPA&
 t=376s , currently at 24.55) and see where to go from there. According to the MVP, the next step is ensure that 
 a customer can add products to basket, checkout, and pay for them.
+
+Day 2 objectives:
+
+-add items to cart and view basket

@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import Request from '../../helpers/request';
+import React from 'react';
+
 import { Grid } from '@material-ui/core';
 
 import Product from './product/Product';
@@ -10,27 +10,11 @@ import useStyles from './styles';
 // ];
 
 
-const Products = () => {
+const Products = ({ products, onAddToCart }) => {
 
     const classes = useStyles();
 
-    const [products, setProducts] = useState([]);
-    const [cart, setCart] = ({});
 
-    const requestAll = function(){
-        const request = new Request();
-        const productPromise = request.get('/products')
-        
-        productPromise
-        .then((data) => {
-            setProducts(data)
-            console.log(data)
-        })
-    }
-
-    useEffect(() => {
-        requestAll()
-    }, [])
 
     return(
         <main className={classes.content}>
@@ -38,7 +22,7 @@ const Products = () => {
             <Grid container justify="center" spacing={4}>
                 {products.map((product) => (
                     <Grid item key={product.id} xs={12} s={6} md={4} lg={3}>
-                        <Product product={product}/>
+                        <Product product={product} onAddToCart={onAddToCart}/>
                     </Grid>
                 ))}
             </Grid>
