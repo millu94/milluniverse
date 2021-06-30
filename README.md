@@ -29,3 +29,15 @@ a customer can add products to basket, checkout, and pay for them.
 Day 2 objectives:
 
 -add items to cart and view basket
+
+First I altered the Header.js file so that it had its own folder, and a styles.js file. The header now has a 
+shopping cart icon with as badge indicating how many items are in the basket.
+
+Then I added basket and a setBasket array using useState. I created a fetchBasket (that would continually check how
+many items were in the basket) and a handleAddToBasket that would add the corresponding item to the basket whenever
+the user clicked on it. In order to achieve the latter task I had to remind myself on how to use the spread operator
+(...) as I was getting loads of errors prior to this realisation. After I managed to console log the expected 
+amount of items in the basket, I then passed the length of the basket array as a prop to the number badge that
+would display how many items were in the basket. One thing that I have noticed is that if I click on a different 
+section of the website, I lose all the items in the basket. Ideally I would like to retain all the items in the 
+basket no matter what part of the website I am visiting.

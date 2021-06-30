@@ -4,13 +4,12 @@ import Request from '../helpers/request';
 // import Products from '../components/products/Products';
 // check out the index.js file inside the components folder to see how they can be exported
 
-import { Header, Products } from '../components';
-import { QueueTwoTone } from '@material-ui/icons';
+import { Header, Products, Basket } from '../components';
 
 const Shop = () => {
 
     const [products, setProducts] = useState([]);
-    const [cart, setCart] = useState([]);
+    const [basket, setBasket] = useState([]);
 
     const requestAll = function(){
         const request = new Request();
@@ -23,28 +22,29 @@ const Shop = () => {
         })
     }
 
-    const fetchCart = async () => {
-        setCart(cart)
+    const fetchBasket = async () => {
+        setBasket(basket)
     }
 
-    const handleAddToCart = async ( product ) => {
+    const handleAddToBasket = async ( product ) => {
         
         const item = { product }
-        setCart([...cart, item]);
+        setBasket([...basket, item]);
     }
 
     useEffect(() => {
         requestAll();
-        fetchCart();
+        fetchBasket();
     }, [])
 
-    console.log(cart)
+    console.log(basket)
 
     return(
         <div>
-            <Header totalItems={cart.length}/>
+            <Header totalItems={basket.length}  />
             <h1> Plz buy stuff </h1>
-            <Products products={products} onAddToCart={handleAddToCart}/>
+            <Products products={products} onAddToBasket={handleAddToBasket}/>
+            <Basket basket={basket} />
         </div>
     );
 
