@@ -30,6 +30,7 @@ const Shop = () => {
         
         const item = { product }
         setBasket([...basket, item]);
+        console.log(basket)
     }
 
     useEffect(() => {
