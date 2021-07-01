@@ -18,15 +18,18 @@ const Basket = ({ basket }) => {
             <Grid container spacing={3}>
                 {basket.map((item) => (
                     <Grid item xs={12} sm={4} key={item.id}>
-                        <div>{item.name}</div>
+                        <div>{item.product.name}</div>
+                        {console.log(item.product.name)}
                     </Grid>    
                 ))}
             </Grid>
             <div className={classes.cardDetails}>
-                <Typography variant="h4">
+                <Typography variant="h4" >
                     subtotal: {basket.length}
+                    <div className={classes.buttons} >
                     <Button className={classes.emptyButton} size="large" type="button" variant="contained" color="secondary">Empty cart</Button>
                     <Button className={classes.checkoutButton} size="large" type="button" variant="contained" color="primary">Checkout</Button>
+                    </div>
                 </Typography>
             </div>
         </>

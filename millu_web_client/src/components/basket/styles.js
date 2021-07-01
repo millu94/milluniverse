@@ -5,8 +5,15 @@ export default makeStyles((theme) => ({
   title: {
     marginTop: '5%',
   },
+  buttons: {
+    [theme.breakpoints.up('xs')]: {
+      marginRight: '200px',
+    },
+    left: "40%",
+  },
   emptyButton: {
     minWidth: '150px',
+    borderRadius: "20px",
     [theme.breakpoints.down('xs')]: {
       marginBottom: '5px',
     },
@@ -16,6 +23,7 @@ export default makeStyles((theme) => ({
   },
   checkoutButton: {
     minWidth: '150px',
+    borderRadius: "20px",
   },
   link: {
     textDecoration: 'none',
@@ -23,7 +31,10 @@ export default makeStyles((theme) => ({
   cardDetails: {
     display: 'flex',
     marginTop: '10%',
+    marginBottom:  '10%',
+    marginLeft: '30%',
     width: '100%',
+    position: 'center',
     justifyContent: 'space-between',
   },
 }));
