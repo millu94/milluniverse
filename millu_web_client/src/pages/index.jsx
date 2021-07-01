@@ -8,6 +8,7 @@ const MainPage = () => {
         <div>
             <Header />
             <h1>Welcome to the MILLÜNIVERSE</h1>
+            
         </div>
     );
 

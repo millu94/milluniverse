@@ -43,3 +43,17 @@ section of the website, I lose all the items in the basket. Ideally I would like
 basket no matter what part of the website I am visiting.
 
 I finished off today by working on the basket/checkout feature.
+
+Day 3 objectives:
+
+-get subtotal displaying correctly in basket
+-work on the layout of basket
+
+Today I spent a lot of time looking over the Material-UI setup inside the project, so that when I have finished
+with the major functions I have some background knowledge on where to start editing the appearance of the website.
+
+I struggled with trying to come up with a function that would calculate the total price of the items in the cart,
+when I brought in an instructor they pointed out that the reduce() function would be able to handle this problem.
+
+Tomorrow I will need to move the fetchBasket so that it operates at a level where it retains the information saved
+no matter the location the user is at. At the moment I have only been able to work on the basket from within the same path as the shop, so in order to have a separate basket and checkout page I will need to solve this problem.
