@@ -1,8 +1,7 @@
 import React, {useState, useEffect}  from 'react';
 import Request from '../helpers/request';
-// import Header from '../components/header/Header';
-// import Products from '../components/products/Products';
-// check out the index.js file inside the components folder to see how they can be exported
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+
 
 import { Header, Products, Basket } from '../components';
 
@@ -26,9 +25,9 @@ const Shop = () => {
         setBasket(basket)
     }
 
-    const handleAddToBasket = async ( product ) => {
+    const handleAddToBasket = async ( product, quantity ) => {
         
-        const item = { product }
+        const item = { product, quantity }
         setBasket([...basket, item]);
         console.log(basket)
     }

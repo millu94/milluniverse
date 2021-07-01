@@ -9,6 +9,7 @@ import MusicPage from './pages/music';
 import SoftDev from './pages/softdev';
 import Life from './pages/life';
 import Shop from './pages/shop';
+import Basket from './components/basket/Basket';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route exact path="/softdev" component={SoftDev}/>
         <Route exact path="/life" component={Life}/>
         <Route exact path="/shop" component={Shop}/>
+        <Route exact path="/basket" component={Basket}/>
         <Redirect to= '/404'/>
         </Switch>
       </Router>
