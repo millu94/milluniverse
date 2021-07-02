@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 
-import { BrowserRouter as Router, Route, Switch, Link, Redirect} from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
 
 import MainPage from './pages';
 import NotFound from './pages/404';
@@ -31,6 +31,18 @@ function App() {
       console.log(basket)
     }
 
+    // const handleUpdateBasketQty = async ( productId, quantity ) => {
+    
+    // }
+
+    // const handleRemoveFromBasket = async ( productId ) => {
+
+    // }
+
+    const handleEmptyBasket = async () => {
+      setBasket([]);
+    }
+
     console.log(basket)
 
     return (
@@ -42,7 +54,10 @@ function App() {
           <Route exact path="/softdev" component={() => <SoftDev basket={basket}/>}/>
           <Route exact path="/life" component={() => <Life basket={basket}/>}/>
           <Route exact path="/shop" render={() => <Shop basket={basket} handleAddToBasket={handleAddToBasket}/>}/>
-          <Route exact path="/basket" render={() => <Basket basket={basket}/>}/>
+          <Route exact path="/basket" render={() => <Basket 
+            basket={basket}
+            handleEmptyBasket={handleEmptyBasket}
+            />}/>
           <Redirect to= '/404'/>
           </Switch>
           {/* <Shop basket={basket} handleAddToBasket={handleAddToBasket}/> */}

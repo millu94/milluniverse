@@ -22,7 +22,7 @@ const Header = ({ totalItems }) => {
                         <img src={logo} alt="commerce.js" height="25px" className={classes.image} /> 
                         millüniverse
                     </Typography>
-                {location.pathname === '/shop','/' && (    
+                {location.pathname === '/shop', '/' && (    
                 <div className={classes.button}>
                     <IconButton component={Link} to="/basket" aria-label="Show cart items" color="inherit">
                     <Badge badgeContent={totalItems} color="secondary">
