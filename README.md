@@ -22,8 +22,8 @@ with an instructor I found out that you can list a proxy URL at the bottom of th
 that all that was need was a cautionary npm install and npm start, and my products seeded from the server side 
 were displaying in the front end.
 
-Tomorrow I will start my day with resuming this handy tutorial (https://www.youtube.com/watch?v=377AQ0y6LPA&
-t=376s , currently at 24.55) and see where to go from there. According to the MVP, the next step is ensure that 
+Tomorrow I will start my day with resuming this handy tutorial (https://www.youtube.com/watch?v=377AQ0y6LPA&t=376s 
+, currently at 24.55) and see where to go from there. According to the MVP, the next step is ensure that 
 a customer can add products to basket, checkout, and pay for them.
 
 Day 2 objectives:
@@ -56,4 +56,10 @@ I struggled with trying to come up with a function that would calculate the tota
 when I brought in an instructor they pointed out that the reduce() function would be able to handle this problem.
 
 Tomorrow I will need to move the fetchBasket so that it operates at a level where it retains the information saved
-no matter the location the user is at. At the moment I have only been able to work on the basket from within the same path as the shop, so in order to have a separate basket and checkout page I will need to solve this problem.
+no matter the location the user is at. At the moment I have only been able to work on the basket from within the 
+same path as the shop, so in order to have a separate basket and checkout page I will need to solve this problem.
+
+Day 4 objectives:
+
+-ensure basket retains items at any location
+-create basket path
