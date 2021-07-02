@@ -36,11 +36,11 @@ function App() {
     return (
         <Router>
           <Switch>
-          <Route exact path="/" component={MainPage}/>
+          <Route exact path="/" component={() => <MainPage basket={basket}/>}/>
           <Route exact path='/404' component={NotFound}/>
-          <Route exact path="/music" component={MusicPage}/>
-          <Route exact path="/softdev" component={SoftDev}/>
-          <Route exact path="/life" component={Life}/>
+          <Route exact path="/music" component={() => <MusicPage basket={basket}/>}/>
+          <Route exact path="/softdev" component={() => <SoftDev basket={basket}/>}/>
+          <Route exact path="/life" component={() => <Life basket={basket}/>}/>
           <Route exact path="/shop" render={() => <Shop basket={basket} handleAddToBasket={handleAddToBasket}/>}/>
           <Route exact path="/basket" render={() => <Basket basket={basket}/>}/>
           <Redirect to= '/404'/>

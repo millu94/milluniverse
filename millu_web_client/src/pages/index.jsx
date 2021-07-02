@@ -3,10 +3,10 @@ import Header from '../components/header/Header';
 import ReactDOM from 'react-dom';
 
 
-const MainPage = () => {
+const MainPage = ({ basket }) => {
     return(
         <div>
-            <Header />
+            <Header totalItems={ basket.length }/>
             <h1>Welcome to the MILLÜNIVERSE</h1>
             
         </div>

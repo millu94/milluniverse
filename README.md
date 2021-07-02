@@ -4,8 +4,6 @@ Day 1 objectives:
 
 -Get back end up and running using Java and Spring
 
-Day1 outcomes:
-
 After signing off the project with an instructor yesterday afternoon, I knew that my first task would be to get
 the back-end operational. Up until this point I had a very loose skeleton prototype for the website, and the
 shop items were hardcoded in the front end. 
@@ -63,3 +61,15 @@ Day 4 objectives:
 
 -ensure basket retains items at any location
 -create basket path
+
+I started by moving the fetchBasket and handleAddToBasket to app.js, I tried passing it in as a prop to a normal
+component within the return statement but this rendered the shop component on every page. With help from an 
+instructor we passed the props directly through the React route tags (using some funk syntax). 
+
+After that I worked on ensuring that the number of items in the basket stayed the same no matter where the user had
+navigated to. This just meant passing the basket array as a prop to all the different routes.
+
+When I get back from work, I will then start working on the buttons inside the basket, that allow the user to 
+increment/decrease items, as well as empty basket and (finally) to the checkout stage.
+
+
