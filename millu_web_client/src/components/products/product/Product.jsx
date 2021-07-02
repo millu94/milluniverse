@@ -23,7 +23,7 @@ const Product = ({ product, onAddToBasket }) => {
                 </div>
                 <Typography variant="body2" color="textSecondary">{product.description}</Typography>
             </CardContent>
-            <CardActions disabledSpacing className={classes.cardActions}>
+            <CardActions className={classes.cardActions}>
                 <IconButton aria-label="Add to Cart" onClick={() => onAddToBasket( product, 1 )}>
                     <AddShoppingCart />
                 </IconButton>

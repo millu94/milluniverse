@@ -5,11 +5,13 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { Header, Products, Basket } from '../components';
 
-const Shop = () => {
+const Shop = ({ basket, handleAddToBasket }) => {
 
     const [products, setProducts] = useState([]);
-    const [basket, setBasket] = useState([]);
 
+    
+    
+    
     const requestAll = function(){
         const request = new Request();
         const productPromise = request.get('/products')
@@ -21,30 +23,18 @@ const Shop = () => {
         })
     }
 
-    const fetchBasket = async () => {
-        setBasket(basket)
-    }
-
-    const handleAddToBasket = async ( product, quantity ) => {
-        
-        const item = { product, quantity }
-        setBasket([...basket, item]);
-        console.log(basket)
-    }
-
     useEffect(() => {
         requestAll();
-        fetchBasket();
     }, [])
 
-    console.log(basket)
+    
 
     return(
         <div>
-            <Header totalItems={basket.length}  />
+            <Header totalItems={ basket.length }  />
             <h1> Plz buy stuff </h1>
             <Products products={products} onAddToBasket={handleAddToBasket}/>
-            <Basket basket={basket} />
+            {/* <Basket basket={basket} /> */}
         </div>
     );
 

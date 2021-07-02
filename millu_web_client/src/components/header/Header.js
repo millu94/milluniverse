@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography } from '@material-ui/core';
 import { ShoppingCart } from '@material-ui/icons';
@@ -12,6 +12,7 @@ import useStyles from './styles';
 const Header = ({ totalItems }) => {
 
     const classes = useStyles();
+    const location =  useLocation();
 
     return(
         <div>
@@ -21,14 +22,14 @@ const Header = ({ totalItems }) => {
                         <img src={logo} alt="commerce.js" height="25px" className={classes.image} /> 
                         millüniverse
                     </Typography>
-                    
+                {location.pathname === '/shop' && (    
                 <div className={classes.button}>
-                    <IconButton aria-label="Show cart items" color="inherit">
+                    <IconButton component={Link} to="/basket" aria-label="Show cart items" color="inherit">
                     <Badge badgeContent={totalItems} color="secondary">
                         <ShoppingCart />
                     </Badge>
                     </IconButton>
-                </div>
+                </div> )}
             
                 </Toolbar>
             </AppBar>

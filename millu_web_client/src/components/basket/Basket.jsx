@@ -3,6 +3,7 @@ import { Container, Typography, Button, Grid } from '@material-ui/core';
 
 import useStyles from './styles';
 import BasketItem from './basketItem/BasketItem';
+import Header from '../header/Header';
 
 const Basket = ({ basket }) => {
 
@@ -47,11 +48,14 @@ const Basket = ({ basket }) => {
     )
 
     return (
-        <Container>
-            <div className={classes.toolbar}/>
-            <Typography className={classes.title} variant="h3" gutterBottom>Your Shopping Cart</Typography>
-            { isEmpty ? <EmptyBasket/> : <FilledBasket/>}
-        </Container>
+        <div>
+            <Header totalItems={ basket.length }/>
+            <Container>
+                <div className={classes.toolbar}/>
+                <Typography className={classes.title} variant="h3" gutterBottom>Your Shopping Cart</Typography>
+                { isEmpty ? <EmptyBasket/> : <FilledBasket/>}
+            </Container>
+        </div>
     )
 }
 
