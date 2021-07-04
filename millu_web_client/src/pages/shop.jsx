@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import { Header, Products, Basket } from '../components';
 
-const Shop = ({ basket, handleAddToBasket }) => {
+const Shop = ({ basket, handleAddToBasket, handleRemoveFromBasket }) => {
 
     const [products, setProducts] = useState([]);
 
@@ -34,7 +34,6 @@ const Shop = ({ basket, handleAddToBasket }) => {
             <Header totalItems={ basket.length }  />
             <h1> Plz buy stuff </h1>
             <Products products={products} onAddToBasket={handleAddToBasket}/>
-            {/* <Basket basket={basket} /> */}
         </div>
     );
 

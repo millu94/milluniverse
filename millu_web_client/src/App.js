@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, location} from 'react';
 import './App.css';
 
 import { BrowserRouter as Router, Route, Switch, Redirect} from 'react-router-dom';
@@ -42,8 +42,9 @@ function App() {
           basket.splice(i, 1)
         }
         console.log(basket)
-        // setBasket(...basket)
       }
+      
+      setBasket([...basket])
 
 
       // for (let i = 0; i <= basket.length; i++){
@@ -83,6 +84,7 @@ function App() {
             <Shop 
             basket={basket} 
             handleAddToBasket={handleAddToBasket}
+            handleRemoveFromBasket={handleRemoveFromBasket}
             />}
           />
 
