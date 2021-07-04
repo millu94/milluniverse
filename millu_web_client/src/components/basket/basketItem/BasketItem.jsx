@@ -22,7 +22,7 @@ const BasketItem = ({ item, onUpdateBasketQty, onRemoveFromBasket }) => {
                     <Typography>{item.quantity}</Typography>
                     <Button type="button" size="small" onClick={() => onUpdateBasketQty(item.product.id, item.quantity + 1)}>+</Button>
                 </div>
-                <Button variant="contained" type="button" color="secondary">Remove</Button>
+                <Button variant="contained" type="button" color="secondary" onClick={() => onRemoveFromBasket(item.product.id)}>Remove</Button>
 
             </CardActions>
         </Card>

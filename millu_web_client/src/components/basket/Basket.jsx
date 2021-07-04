@@ -5,7 +5,7 @@ import useStyles from './styles';
 import BasketItem from './basketItem/BasketItem';
 import Header from '../header/Header';
 
-const Basket = ({ basket, handleEmptyBasket }) => {
+const Basket = ({ basket, handleRemoveFromBasket, handleEmptyBasket }) => {
 
     const classes = useStyles();
 
@@ -29,7 +29,7 @@ const Basket = ({ basket, handleEmptyBasket }) => {
             <Grid container spacing={3}>
                 {basket.map((item) => (
                     <Grid item xs={12} sm={4} key={item.product.id}>
-                        <BasketItem item={item}/>
+                        <BasketItem item={item} onRemoveFromBasket={handleRemoveFromBasket}/>
                     </Grid>    
                 ))}
             </Grid>

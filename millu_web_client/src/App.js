@@ -28,22 +28,47 @@ function App() {
         
       const item = { product, quantity }
       setBasket([...basket, item]);
-      console.log(basket)
     }
 
     // const handleUpdateBasketQty = async ( productId, quantity ) => {
+    //   console.log(productId, quantity);
+    // }
+
+    const handleRemoveFromBasket = async ( productId ) => {
+      // if the productId matches a product in the basket with the same id, remove the product(s) from basket
+      for(var i in basket){
+        if(basket[i].product.id === productId){
+          console.log(basket[i].product.id)
+          basket.splice(i, 1)
+        }
+        console.log(basket)
+        // setBasket(...basket)
+      }
+
+
+      // for (let i = 0; i <= basket.length; i++){
+      //   if(basket[i].product.id === undefined){
+      //     return
+      //   } else {
+      //     console.log(basket[i].product.id)
+      //   }
+        // if (productId === basket[i].product.id){
+        //   basket.splice(i);
+        // }
+      // }
+
+      // console.log(productId);
+      // console.log(basket[0].product.id);
+      // console.log(basket[0].product);
+      // const itemToRemove = basket.product.find(id => id === productId);
+    }
     
-    // }
-
-    // const handleRemoveFromBasket = async ( productId ) => {
-
-    // }
-
     const handleEmptyBasket = async () => {
       setBasket([]);
     }
-
-    console.log(basket)
+    
+    console.log(basket);
+    
 
     return (
         <Router>
@@ -53,11 +78,22 @@ function App() {
           <Route exact path="/music" component={() => <MusicPage basket={basket}/>}/>
           <Route exact path="/softdev" component={() => <SoftDev basket={basket}/>}/>
           <Route exact path="/life" component={() => <Life basket={basket}/>}/>
-          <Route exact path="/shop" render={() => <Shop basket={basket} handleAddToBasket={handleAddToBasket}/>}/>
-          <Route exact path="/basket" render={() => <Basket 
+
+          <Route exact path="/shop" render={() => 
+            <Shop 
+            basket={basket} 
+            handleAddToBasket={handleAddToBasket}
+            />}
+          />
+
+          <Route exact path="/basket" render={() => 
+            <Basket 
             basket={basket}
+            handleRemoveFromBasket={handleRemoveFromBasket}
             handleEmptyBasket={handleEmptyBasket}
-            />}/>
+            />}
+          />
+
           <Redirect to= '/404'/>
           </Switch>
           {/* <Shop basket={basket} handleAddToBasket={handleAddToBasket}/> */}
