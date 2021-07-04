@@ -85,6 +85,11 @@ Day 5/6 objectives:
 -research inbuilt JS functions that will solve my problems
 -handleRemoveFromBasket(), handleUpdateBasketQty(), modify/refactor handleAddToBasket() & subtotal()
 
+Tomorrow I will start a three day sprint to get the project finished and ready for presentation on Thursday. My
+first two tasks that I have to do before moving on to the checkout function are finishing off the 
+handleAddToBasket() function and refactoring subtotal().
+
+
 
 
 
