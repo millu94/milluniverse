@@ -35,6 +35,9 @@ function App() {
       for(var i in basket){
         if(basket[i].product.id === productId){
           basket[i].quantity = quantity;
+        } 
+        if ( basket[i].quantity < 1) {
+          basket.splice(i, 1)
         }
         setBasket([...basket])
       }  
