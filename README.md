@@ -72,4 +72,19 @@ navigated to. This just meant passing the basket array as a prop to all the diff
 When I get back from work, I will then start working on the buttons inside the basket, that allow the user to 
 increment/decrease items, as well as empty basket and (finally) to the checkout stage.
 
+*back from work:
+
+The handleEmptyBasket was the most simple function out of the BasketItem functions: I chose to write this function
+first as there was no logic involved in writing it (setBasket([])). The tutorial I am following online has made
+extensive use of functions such as "commerce.cart.update()", these functions are not available in vanilla JS so 
+over the weekend I will take my time to figure out the best way to manipulate the data in the basket.
+
+Day 5/6 objectives:
+
+-enjoy the weekend
+-research inbuilt JS functions that will solve my problems
+-handleRemoveFromBasket(), handleUpdateBasketQty(), modify/refactor handleAddToBasket() & subtotal()
+
+
+
 

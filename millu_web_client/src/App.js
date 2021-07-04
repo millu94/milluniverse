@@ -25,13 +25,34 @@ function App() {
     }, [])
 
     const handleAddToBasket = async ( product, quantity ) => {
-        
-      const item = { product, quantity }
-      setBasket([...basket, item]);
+      // if item is present in basket, increase that item's quantity by one
+      // if (basket === undefined){
+      //   console.log("ok")
+      // } else {
+      //   for(var i in basket){
+      //     var isProductInBasket = product in basket;
+      //   }
+      // }
+
+      console.log(product in basket)
+      
+      if(basket.length > 0){
+        for(var i in basket){
+          if(basket[i].product.id === product.id){
+            basket[i].quantity += 1;
+            setBasket([...basket])
+          }
+        }
+      } else {
+          const item = { product, quantity }
+          setBasket([...basket, item]);
+      }
     }
+    
+    // console.log(item.product.id)
+
 
     const handleUpdateBasketQty = async ( productId, quantity ) => {
-      // updates the quantity of a specific item(using productId) in the basket
       for(var i in basket){
         if(basket[i].product.id === productId){
           basket[i].quantity = quantity;
@@ -42,6 +63,7 @@ function App() {
         setBasket([...basket])
       }  
       console.log(productId, quantity);
+      console.log(basket)
     }
 
     const handleRemoveFromBasket = async ( productId ) => {
