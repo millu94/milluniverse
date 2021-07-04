@@ -8,13 +8,17 @@ const BasketItem = ({ item, onUpdateBasketQty, onRemoveFromBasket }) => {
 
     const classes = useStyles();
 
+    // const totalPrice = function (itemPrice, itemQty){
+
+    // }
+
 
     return (
         <Card>
             <CardMedia image={item.product.image} alt={item.product.name} className={classes.media}/>
             <CardContent className={classes.cardContent}>
                 <Typography variant="h4">{item.product.name}</Typography>
-                <Typography variant="h5">{item.product.price}</Typography>
+                <Typography variant="h5">£ {item.product.price * item.quantity}</Typography>
             </CardContent>
             <CardActions className={classes.cardActions}>
                 <div className={classes.buttons}>

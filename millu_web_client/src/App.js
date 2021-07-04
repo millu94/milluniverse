@@ -30,45 +30,31 @@ function App() {
       setBasket([...basket, item]);
     }
 
-    // const handleUpdateBasketQty = async ( productId, quantity ) => {
-    //   console.log(productId, quantity);
-    // }
-
-    const handleRemoveFromBasket = async ( productId ) => {
-      // if the productId matches a product in the basket with the same id, remove the product(s) from basket
+    const handleUpdateBasketQty = async ( productId, quantity ) => {
+      // updates the quantity of a specific item(using productId) in the basket
       for(var i in basket){
         if(basket[i].product.id === productId){
-          console.log(basket[i].product.id)
+          basket[i].quantity = quantity;
+        }
+        setBasket([...basket])
+      }  
+      console.log(productId, quantity);
+    }
+
+    const handleRemoveFromBasket = async ( productId ) => {
+      for(var i in basket){
+        if(basket[i].product.id === productId){
           basket.splice(i, 1)
         }
-        console.log(basket)
+        setBasket([...basket])
       }
-      
-      setBasket([...basket])
-
-
-      // for (let i = 0; i <= basket.length; i++){
-      //   if(basket[i].product.id === undefined){
-      //     return
-      //   } else {
-      //     console.log(basket[i].product.id)
-      //   }
-        // if (productId === basket[i].product.id){
-        //   basket.splice(i);
-        // }
-      // }
-
-      // console.log(productId);
-      // console.log(basket[0].product.id);
-      // console.log(basket[0].product);
-      // const itemToRemove = basket.product.find(id => id === productId);
     }
     
     const handleEmptyBasket = async () => {
       setBasket([]);
     }
     
-    console.log(basket);
+    // console.log(basket);
     
 
     return (
@@ -84,13 +70,13 @@ function App() {
             <Shop 
             basket={basket} 
             handleAddToBasket={handleAddToBasket}
-            handleRemoveFromBasket={handleRemoveFromBasket}
             />}
           />
 
           <Route exact path="/basket" render={() => 
             <Basket 
             basket={basket}
+            handleUpdateBasketQty={handleUpdateBasketQty}
             handleRemoveFromBasket={handleRemoveFromBasket}
             handleEmptyBasket={handleEmptyBasket}
             />}
