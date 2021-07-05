@@ -1,10 +1,10 @@
 import React from 'react';
 import Header from '../components/header/Header';
 
-const SoftDev = ({ basket }) => {
+const SoftDev = ({ basketQty }) => {
     return(
         <div>
-            <Header totalItems={ basket.length }/>
+            <Header totalItems={ basketQty }/>
             <h1> Software Development Portfolio </h1>
         </div>
     );

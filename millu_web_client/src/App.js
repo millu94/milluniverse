@@ -67,22 +67,23 @@ function App() {
     const handleEmptyBasket = async () => {
       setBasket([]);
     }
-    
-    console.log(basket);
-    
+
+    const basketQty = basket.reduce((tempTotal, item) => {
+      return tempTotal + item.quantity
+    }, 0)
 
     return (
         <Router>
           <Switch>
-          <Route exact path="/" component={() => <MainPage basket={basket}/>}/>
+          <Route exact path="/" component={() => <MainPage basketQty={basketQty}/>}/>
           <Route exact path='/404' component={NotFound}/>
-          <Route exact path="/music" component={() => <MusicPage basket={basket}/>}/>
-          <Route exact path="/softdev" component={() => <SoftDev basket={basket}/>}/>
-          <Route exact path="/life" component={() => <Life basket={basket}/>}/>
+          <Route exact path="/music" component={() => <MusicPage basketQty={basketQty}/>}/>
+          <Route exact path="/softdev" component={() => <SoftDev basketQty={basketQty}/>}/>
+          <Route exact path="/life" component={() => <Life basketQty={basketQty}/>}/>
 
           <Route exact path="/shop" render={() => 
             <Shop 
-            basket={basket} 
+            basketQty={basketQty}
             handleAddToBasket={handleAddToBasket}
             />}
           />
@@ -90,6 +91,7 @@ function App() {
           <Route exact path="/basket" render={() => 
             <Basket 
             basket={basket}
+            basketQty={basketQty}
             handleUpdateBasketQty={handleUpdateBasketQty}
             handleRemoveFromBasket={handleRemoveFromBasket}
             handleEmptyBasket={handleEmptyBasket}
@@ -98,7 +100,7 @@ function App() {
 
           <Redirect to= '/404'/>
           </Switch>
-          <Shop basket={basket} handleAddToBasket={handleAddToBasket}/>
+          {/* <Shop basket={basket} handleAddToBasket={handleAddToBasket}/> */}
         </Router>
         
   );

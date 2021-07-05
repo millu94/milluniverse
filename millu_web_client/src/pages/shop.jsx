@@ -3,9 +3,9 @@ import Request from '../helpers/request';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 
-import { Header, Products, Basket } from '../components';
+import { Header, Products } from '../components';
 
-const Shop = ({ basket, handleAddToBasket, handleRemoveFromBasket }) => {
+const Shop = ({ handleAddToBasket, basketQty }) => {
 
     const [products, setProducts] = useState([]);
 
@@ -31,7 +31,7 @@ const Shop = ({ basket, handleAddToBasket, handleRemoveFromBasket }) => {
 
     return(
         <div>
-            <Header totalItems={ basket.length }  />
+            <Header totalItems={ basketQty }  />
             <h1> Plz buy stuff </h1>
             <Products products={products} onAddToBasket={handleAddToBasket}/>
         </div>

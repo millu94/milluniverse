@@ -1,10 +1,10 @@
 import React from 'react';
 import Header from '../components/header/Header';
 
-const MusicPage = ({ basket }) => {
+const MusicPage = ({ basketQty }) => {
     return(
         <div>
-            <Header totalItems={ basket.length }/>
+            <Header totalItems={ basketQty }/>
             <h1> Info About Ma tunes </h1>
         </div>
     );

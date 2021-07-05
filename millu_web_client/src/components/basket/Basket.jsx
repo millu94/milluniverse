@@ -5,7 +5,7 @@ import useStyles from './styles';
 import BasketItem from './basketItem/BasketItem';
 import Header from '../header/Header';
 
-const Basket = ({ basket, handleUpdateBasketQty, handleRemoveFromBasket, handleEmptyBasket }) => {
+const Basket = ({ basket, handleUpdateBasketQty, handleRemoveFromBasket, handleEmptyBasket, basketQty }) => {
 
     const classes = useStyles();
 
@@ -18,7 +18,7 @@ const Basket = ({ basket, handleUpdateBasketQty, handleRemoveFromBasket, handleE
     const subtotal = function(basket){
         
         const Total = basket.reduce((tempTotal, basket) => {
-            return tempTotal + basket.product.price;
+            return tempTotal + basket.product.price * basket.quantity;
         }, 0)
         return Total;
     }
@@ -47,7 +47,7 @@ const Basket = ({ basket, handleUpdateBasketQty, handleRemoveFromBasket, handleE
 
     return (
         <div>
-            <Header totalItems={ basket.length }/>
+            <Header totalItems={ basketQty }/>
             <Container>
                 <div className={classes.toolbar}/>
                 <Typography className={classes.title} variant="h3" gutterBottom>Your Basket</Typography>
