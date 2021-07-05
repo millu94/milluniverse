@@ -68,7 +68,7 @@ function App() {
       setBasket([]);
     }
     
-    // console.log(basket);
+    console.log(basket);
     
 
     return (
@@ -98,7 +98,7 @@ function App() {
 
           <Redirect to= '/404'/>
           </Switch>
-          {/* <Shop basket={basket} handleAddToBasket={handleAddToBasket}/> */}
+          <Shop basket={basket} handleAddToBasket={handleAddToBasket}/>
         </Router>
         
   );
