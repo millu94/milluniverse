@@ -10,6 +10,7 @@ import SoftDev from './pages/softdev';
 import Life from './pages/life';
 import Shop from './pages/shop';
 import Basket from './components/basket/Basket';
+import Checkout from './components/checkoutForm/checkout/Checkout'
 
 function App() {
 
@@ -97,6 +98,11 @@ function App() {
             handleEmptyBasket={handleEmptyBasket}
             />}
           />
+
+          <Route exact path="/checkout">
+            <Checkout basket={basket} basketQty={basketQty}/>
+
+          </Route>
 
           <Redirect to= '/404'/>
           </Switch>
