@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
-import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography } from '@material-ui/core';
+import { AppBar, Toolbar, IconButton, Badge, MenuItem, Menu, Typography, Button } from '@material-ui/core';
 import { ShoppingCart } from '@material-ui/icons';
 
 import logo from '../../static/images/discoplanet.jpeg'
@@ -21,6 +21,17 @@ const Header = ({ totalItems }) => {
                     <Typography component={Link} to="/" variant="h6" className={classes.title} color="inherit">
                         <img src={logo} alt="commerce.js" height="25px" className={classes.image} /> 
                         millüniverse
+
+                        <Button align="right" variant="outlined" component={Link} to="/" >Home</Button>
+
+                        <Button variant="outlined" component={Link} to="/music" >Music</Button>
+                        
+                        <Button variant="outlined" component={Link} to="/softdev" >Software</Button>
+                        
+                        <Button variant="outlined" component={Link} to="/life" >Life</Button>
+                        
+                        <Button variant="outlined" component={Link} to="/shop" >Shop</Button>
+                        
                     </Typography>
                 {location.pathname === '/shop', '/' && (    
                 <div className={classes.button}>
@@ -35,18 +46,12 @@ const Header = ({ totalItems }) => {
             </AppBar>
 
 
-            <h1> Menu </h1>
-            <div>
-                <Link to="/">Home</Link>
-                <br />
-                <Link to="/music">Music</Link>
-                <br />
-                <Link to="/softdev">Software Development</Link>
-                <br />
-                <Link to="/life">Life</Link>
-                <br />
-                <Link to="/shop">Shop</Link>
             
+            <div>
+                
+                <br />
+                <p> wooooooow!</p>
+                <br />
             </div>    
         </div>
     )

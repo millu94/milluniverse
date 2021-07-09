@@ -33,23 +33,22 @@ const AddressForm = ({ next }) => {
     return (
         
         <form onSubmit={handleSubmit}>
-            <Grid >
-                <InputLabel htmlFor="name">Name:</InputLabel>
-                <Input onChange={onChange} type="text" id="name" v-model="name" required/>
-                <br/>
-                <InputLabel htmlFor="address">Address:</InputLabel>
-                <Input onChange={onChange} type="text" id="address" v-model="name" required/>
-                <br/>
-                <InputLabel htmlFor="email">Email:</InputLabel>
-                <Input onChange={onChange} type="text" id="email" v-model="name" required/>
-                <br/>
-                <InputLabel htmlFor="phoneNumber">Phone Number:</InputLabel>
-                <Input onChange={onChange} type="text" id="phone" v-model="name" required/>
-            </Grid>
-            <br/>
-            {/* <input type="submit" value="Save" id="save"/> */}
+            
+            <InputLabel htmlFor="name">Name:</InputLabel>
+            <Input onChange={onChange} type="text" id="name" v-model="name" required/>
+            <br/> <br/>
+            <InputLabel htmlFor="address">Address:</InputLabel>
+            <Input onChange={onChange} type="text" id="address" v-model="name" required/>
+            <br/> <br/>
+            <InputLabel htmlFor="email">Email:</InputLabel>
+            <Input onChange={onChange} type="text" id="email" v-model="name" required/>
+            <br/> <br/>
+            <InputLabel htmlFor="phoneNumber">Phone Number:</InputLabel>
+            <Input onChange={onChange} type="text" id="phone" v-model="name" required/>
+            
+            <br/> <br/>
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                <Button component={Link} variant="outlined" to="/cart">Back to Cart</Button>
+                <Button component={Link} variant="outlined" to="/basket">Back to Cart</Button>
                 <Button type="submit" variant="contained" color="primary">Next</Button>
           </div>
         </form>

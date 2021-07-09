@@ -52,8 +52,6 @@ function App() {
         }
         setBasket([...basket])
       }  
-      console.log(productId, quantity);
-      console.log(basket)
     }
 
     const handleRemoveFromBasket = async ( productId ) => {
@@ -100,7 +98,7 @@ function App() {
           />
 
           <Route exact path="/checkout">
-            <Checkout basket={basket} basketQty={basketQty}/>
+            <Checkout basket={basket} basketQty={basketQty} handleEmptyBasket={handleEmptyBasket}/>
 
           </Route>
 

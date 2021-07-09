@@ -32,7 +32,7 @@ const Shop = ({ handleAddToBasket, basketQty }) => {
     return(
         <div>
             <Header totalItems={ basketQty }  />
-            <h1> Plz buy stuff </h1>
+            <h1> Pretend Shop, go crazy and buy as much as you like! </h1>
             <Products products={products} onAddToBasket={handleAddToBasket}/>
         </div>
     );
